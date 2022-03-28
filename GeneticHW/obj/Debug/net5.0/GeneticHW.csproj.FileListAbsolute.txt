@@ -1,0 +1,16 @@
+C:\Users\ridva\Desktop\sez öd2\GeneticHW\bin\Debug\net5.0\GeneticHW.exe
+C:\Users\ridva\Desktop\sez öd2\GeneticHW\bin\Debug\net5.0\GeneticHW.deps.json
+C:\Users\ridva\Desktop\sez öd2\GeneticHW\bin\Debug\net5.0\GeneticHW.runtimeconfig.json
+C:\Users\ridva\Desktop\sez öd2\GeneticHW\bin\Debug\net5.0\GeneticHW.runtimeconfig.dev.json
+C:\Users\ridva\Desktop\sez öd2\GeneticHW\bin\Debug\net5.0\GeneticHW.dll
+C:\Users\ridva\Desktop\sez öd2\GeneticHW\bin\Debug\net5.0\ref\GeneticHW.dll
+C:\Users\ridva\Desktop\sez öd2\GeneticHW\bin\Debug\net5.0\GeneticHW.pdb
+C:\Users\ridva\Desktop\sez öd2\GeneticHW\obj\Debug\net5.0\GeneticHW.csprojAssemblyReference.cache
+C:\Users\ridva\Desktop\sez öd2\GeneticHW\obj\Debug\net5.0\GeneticHW.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ridva\Desktop\sez öd2\GeneticHW\obj\Debug\net5.0\GeneticHW.AssemblyInfoInputs.cache
+C:\Users\ridva\Desktop\sez öd2\GeneticHW\obj\Debug\net5.0\GeneticHW.AssemblyInfo.cs
+C:\Users\ridva\Desktop\sez öd2\GeneticHW\obj\Debug\net5.0\GeneticHW.csproj.CoreCompileInputs.cache
+C:\Users\ridva\Desktop\sez öd2\GeneticHW\obj\Debug\net5.0\GeneticHW.dll
+C:\Users\ridva\Desktop\sez öd2\GeneticHW\obj\Debug\net5.0\ref\GeneticHW.dll
+C:\Users\ridva\Desktop\sez öd2\GeneticHW\obj\Debug\net5.0\GeneticHW.pdb
+C:\Users\ridva\Desktop\sez öd2\GeneticHW\obj\Debug\net5.0\GeneticHW.genruntimeconfig.cache
