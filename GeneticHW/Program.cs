@@ -33,7 +33,9 @@ namespace GeneticHW
                 totalPercentageValue += fitness.Percentage;
             }
             Console.WriteLine("0. Generation Total fitness value: "+ totalFitnessValue);
-            Console.WriteLine("0. Generation Value of Best Chromosome: "+ FitnessValues.Max(value => value.Value));
+            double bestResult = FitnessValues.Max(value => value.Value);
+            int bestResultIndex = 0;
+            Console.WriteLine("0. Generation Value of Best Chromosome: "+ bestResult);
             for(int i = 0 ; i < IterationCount; i++)
             {
                 List<Chromosome> SelectedParents = Selection(FitnessValues, totalPercentageValue, ParentCount, Population);
@@ -51,8 +53,17 @@ namespace GeneticHW
                     totalPercentageValue += fitness.Percentage;
                 }
                 Console.WriteLine(i+". Generation Total fitness value: "+ totalFitnessValue);
-                Console.WriteLine(i+". Generation Value of Best Chromosome: "+ FitnessValues.Max(value => value.Value));
-            } 
+                double maxValueofGen = FitnessValues.Max(value => value.Value);
+                Console.WriteLine(i+". Generation Value of Best Chromosome: "+maxValueofGen);
+                if(maxValueofGen > bestResult)
+                {
+                    bestResult = maxValueofGen;
+                    bestResultIndex = i;
+                }
+                      
+            }
+            Console.WriteLine("\nThe Best Value is: " + bestResult);
+            Console.WriteLine("Index of The Best Value is: "+ bestResultIndex);
         }
 
         static List<Chromosome> Merger(List<Chromosome> Population, List<Chromosome> ChildChromosomes, List<Fitness> FitnessValues, int ParentCount)
