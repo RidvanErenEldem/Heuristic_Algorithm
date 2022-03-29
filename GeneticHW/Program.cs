@@ -65,29 +65,8 @@ namespace GeneticHW
             Console.WriteLine("\nThe Best Value is: " + bestResult);
             Console.WriteLine("Index of The Best Value is: "+ bestResultIndex);
         }
-
-        static List<Chromosome> Merger(List<Chromosome> Population, List<Chromosome> ChildChromosomes, List<Fitness> FitnessValues, int ParentCount)
-        {
-            for(int i = 0; i < ParentCount; i++)
-            {
-                double Worst = FitnessValues.Min(value => value.Value);
-                int j = 0;
-                foreach (Fitness value in FitnessValues)
-                {
-                    if(Worst == value.Value)
-                        break;
-                    j++;
-                }
-                Population.RemoveAt(j);
-                FitnessValues.RemoveAt(j);
-            }
-            for (int i = 0; i < ParentCount; i++)
-            {
-                Population.Add(ChildChromosomes[i]);
-            }
-            return Population;
-        }
-
+        
+        #region  Population Generation
         static Chromosome GenerateRandomChromosome(int size)
         {
             string chromosomeInfo = "";
@@ -113,7 +92,9 @@ namespace GeneticHW
 
             return population;
         }
+        #endregion
 
+        #region  Fitness Calculation
         static List<Fitness> CalculateFitness(List<Chromosome> population, int X1Size, int X2Size)
         {
             List<double> fitnessValues = new List<double>();
@@ -145,10 +126,10 @@ namespace GeneticHW
 
                 double part1 = 40 - Convert.ToDouble(9m/2m)*X1Value;
                 double part2 = (4*X2Value) - Math.Pow(X1Value,2);
-                double part3 = (2*Math.Pow(X2Value,2))+ (2*X1Value*X2Value);
-                double part4 = Math.Pow(X1Value,4) + (2*Math.Pow(X1Value,2)*X2Value);
+                double part3 = -(2*Math.Pow(X2Value,2))+ (2*X1Value*X2Value);
+                double part4 = -Math.Pow(X1Value,4) + (2*Math.Pow(X1Value,2)*X2Value);
 
-                double fitnessValue = part1 + part2 - part3 - part4;
+                double fitnessValue = part1 + part2 + part3 + part4;
 
                 fitnessValues.Add(fitnessValue);
             }
@@ -173,7 +154,9 @@ namespace GeneticHW
             }
             return fitnessPercente;
         }
-
+        #endregion
+        
+        #region  Selection Crossover Mutate
         static List<Chromosome> Selection (List<Fitness> fitnessValues, double totalPercentage, int ParentCount, List<Chromosome> Population)
         {
             List<int> selectedIndexes = new List<int>();
@@ -252,5 +235,31 @@ namespace GeneticHW
             }
             return Population;
         }
+        #endregion
+        
+        #region Merge Population
+
+        static List<Chromosome> Merger(List<Chromosome> Population, List<Chromosome> ChildChromosomes, List<Fitness> FitnessValues, int ParentCount)
+        {
+            for(int i = 0; i < ParentCount; i++)
+            {
+                double Worst = FitnessValues.Min(value => value.Value);
+                int j = 0;
+                foreach (Fitness value in FitnessValues)
+                {
+                    if(Worst == value.Value)
+                        break;
+                    j++;
+                }
+                Population.RemoveAt(j);
+                FitnessValues.RemoveAt(j);
+            }
+            for (int i = 0; i < ParentCount; i++)
+            {
+                Population.Add(ChildChromosomes[i]);
+            }
+            return Population;
+        }
+        #endregion
     }
 }
